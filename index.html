@@ -22,10 +22,10 @@ window.onload=function(){
 }
         function postContactToGoogle() {
 			
-            var email = $('#email').val();
             var name = $('#name').val();
-			var tel=$("#tel").val();
 			var school=$("#school").val();
+			var tel=$("#tel").val();
+            var email = $('#email').val();
 
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1v2xhLx0TN5FGMZv49ADc5E_8Uz8Nziy6U8ITJgP4gw8/formResponse",
