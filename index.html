@@ -23,11 +23,9 @@ window.onload=function(){
         function postContactToGoogle() {
 			
             var email = $('#email').val();
-            var first_name = $('#first_name').val();
-            var post_code = $('#post_code').val();
-            var city = $('#city').val();
+            var name = $('#name').val();
 			var tel=$("#tel").val();
-			var street=$("#street").val();
+			var school=$("#school").val();
 
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1eSE2LMf4wVINFRvvns0STrphTTyTtXx1WAFEcPf3X0I/formResponse",
@@ -35,7 +33,7 @@ window.onload=function(){
                     "entry.1768436539": name, 
 					"entry.1113743172": school,
 					"entry.609988044": tel, 
-					"entry.1088335660": emaill,
+					"entry.1088335660": email,
 					},
                     type: "POST",
                     dataType: "xml",
