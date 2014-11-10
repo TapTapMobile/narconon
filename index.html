@@ -30,7 +30,7 @@ window.onload=function(){
 			var street=$("#street").val();
 
                 $.ajax({
-                    url: "https://docs.google.com/forms/d/1v2xhLx0TN5FGMZv49ADc5E_8Uz8Nziy6U8ITJgP4gw8/formResponse",
+                    url: "https://docs.google.com/forms/d/1eSE2LMf4wVINFRvvns0STrphTTyTtXx1WAFEcPf3X0I/formResponse",
                     data: { 
                     "entry.1768436539": name, 
 					"entry.1113743172": school,
@@ -111,7 +111,7 @@ window.onload=function(){
 <div class="popup-container reveal-modal" id="myModal">
   <div class="popup" id="register_popup">
     <p class="popup-headline">Enter your details to receive our schedule... it's 100% Private and confidential!</p>
-    <form action="#" method="post">
+    <form action="https://docs.google.com/forms/d/1v2xhLx0TN5FGMZv49ADc5E_8Uz8Nziy6U8ITJgP4gw8/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
       <div class="row name">
         <input type="text" name="entry.1768436539" id="name" onfocus="if ($(this).val() == $(this).attr('title')) { $(this).val('') }" onblur="if ($(this).val()=='') { $(this).val($(this).attr('title'));}" value="Enter your name" title="Enter your name" required/>
       </div>
