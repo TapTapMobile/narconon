@@ -7,6 +7,17 @@
 <!-- Styles -->
 <link href='http://fonts.googleapis.com/css?family=Roboto: 300,400,700,500' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/style.css">
+<style type="text/css">
+body,td,th {
+	font-family: Roboto, sans-serif;
+}
+h5 {
+	font-size: 0.83em;
+}
+h6 {
+	font-size: 0.67em;
+}
+</style>
 
 <!-- Javascript -->
 <script src="js/jquery.js" type="text/javascript"></script>
@@ -15,11 +26,12 @@
 <script src="js/functions.js" type="text/javascript"></script>
 <!-- Javascript End -->
 <script>
-window.onload=function(){
-	document.oncontextmenu=function(){
-		return false;
-	};
-}
+		window.onload=function(){
+			document.oncontextmenu=function(){
+				return false;
+			};
+		}
+
         function postContactToGoogle() {
 			
             var name = $('#name').val();
@@ -27,25 +39,26 @@ window.onload=function(){
 			var tel=$("#tel").val();
             var email = $('#email').val();
 
-                $.ajax({
-                    url: "https://docs.google.com/forms/d/1v2xhLx0TN5FGMZv49ADc5E_8Uz8Nziy6U8ITJgP4gw8/formResponse",
-                    data: { 
-                    "entry.1768436539": name, 
+			$.ajax({
+				url: "https://docs.google.com/forms/d/1v2xhLx0TN5FGMZv49ADc5E_8Uz8Nziy6U8ITJgP4gw8/formResponse",
+				data: { 
+					"entry.1768436539": name, 
 					"entry.1113743172": school,
 					"entry.609988044": tel, 
 					"entry.1088335660": email,
+				},
+				type: "POST",
+				dataType: "xml",
+				statusCode: {
+					0: function () {
+						window.location.replace("thankyou.html");
 					},
-                    type: "POST",
-                    dataType: "xml",
-                    statusCode: {
-                        0: function () {
-                            window.location.replace("thankyou.html");
-                        },
-                        200: function () {
-                            window.location.replace("thankyou.html");
-                        }
-                    }
-                });
+					200: function () {
+						window.location.replace("thankyou.html");
+					}
+				}
+			});
+			
         }
     </script>
 </head>
@@ -109,8 +122,8 @@ window.onload=function(){
 <div class="popup-container reveal-modal" id="myModal">
   <div class="popup" id="register_popup">
     <p class="popup-headline">Enter your details to receive our schedule... it's 100% Private and confidential!</p>
-    <form id="ss-form" target="_self" onsubmit="">
-      <div class="row name">
+    <form action="https://docs.google.com/forms/d/1v2xhLx0TN5FGMZv49ADc5E_8Uz8Nziy6U8ITJgP4gw8/formResponse" method="POST" id="ss-form" target="_self" onsubmit=""> 
+	  <div class="row name">
         <input type="text" name="entry.1768436539" id="name" onfocus="if ($(this).val() == $(this).attr('title')) { $(this).val('') }" onblur="if ($(this).val()=='') { $(this).val($(this).attr('title'));}" value="Enter your name" title="Enter your name" />
       </div>
 	  <div class="row">
@@ -122,7 +135,7 @@ window.onload=function(){
       <div class="row">
         <input type="text" id="email" name="entry.609988044" onfocus="if ($(this).val() == $(this).attr('title')) { $(this).val('') }" onblur="if ($(this).val()=='') { $(this).val($(this).attr('title'));}" value="Your email address" title="Your email address"  />
       </div>
-      <button type="submit" class="submit"><span data-lb="download-now">Send</span><span class="button-arrow">&raquo;</span></button>
+      <button class="submit" onclick="postContactToGoogle();"><span data-lb="download-now">Send</span><span class="button-arrow">&raquo;</span></button>
     </form>
     <a class="close-reveal-modal" ><img src="img/ico-close.png" alt=""/></a> </div>
   <div class="privacy-policy"><span>Privacy Policy:</span> We hate SPAM and promise to keep your details safe.</div>
