@@ -1,7 +1,7 @@
 narconon
 ========
 
-repo & site for lp.​drug-education.co.uk
+repo & site for http://lp.​drug-education.co.uk
 
 repo: https://github.com/TapTapMobile/narconon
 
