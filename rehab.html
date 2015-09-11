@@ -52,7 +52,7 @@ h6 {
 			};
 			$.ajax({
 				type        : 'POST', 
-				url         : 'https://zapier.com/hooks/catch/onwo3r/', 
+				url         : 'https://zapier.com/hooks/catch/32f0bd/', 
 				data        : formData, 
 				dataType    : 'json', 
 				encode      : true
@@ -228,14 +228,16 @@ In addition, calcium and magnesium is given as this can sometimes aid with relax
 <!-- PopUp -->
 <div class="popup-container reveal-modal" id="myModal">
   <div class="popup" id="register_popup">
-    <p class="popup-headline">Enter your details to receive our schedule... it's 100% Private and confidential!</p>
+    <p class="popup-headline">Request info, or to speak with a Counselor</p>
     <form action="https://zapier.com/hooks/catch/onwo3r/" method="POST" id="ss-form"> 
 	  <div class="row name">
         <input type="text" name="name" id="name" onfocus="if ($(this).val() == $(this).attr('title')) { $(this).val('') }" onblur="if ($(this).val()=='') { $(this).val($(this).attr('title'));}" value="Enter your name" title="Enter your name" required="required" />
       </div>
+      <!-- REMOVED FIELD
 	  <div class="row">
         <input type="text" name="school" id="school" onfocus="if ($(this).val() == $(this).attr('title')) { $(this).val('') }" onblur="if ($(this).val()=='') { $(this).val($(this).attr('title'));}" value="Please enter your School or Association" title="Please enter your School or Association" />
       </div>
+      -->
 	  <div class="row">
         <input type="tel" id="tel" name="tel" onfocus="if ($(this).val() == $(this).attr('title')) { $(this).val('') }" onblur="if ($(this).val()=='') { $(this).val($(this).attr('title'));}" value="Phone number to contact you on" title="Phone number to contact you on" required="required" />
       </div>
