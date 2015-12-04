@@ -1,5 +1,6 @@
 /* normalize.css */
 /*! normalize.css v1.1.0 | MIT License | git.io/normalize */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
 	display: block
 }
@@ -34,11 +35,13 @@ a:active, a:hover {
 }
 h1 {
 	font-size: 2em;
-	margin: .67em 0
+	margin: .67em 0;
+	font-family: 'Open Sans',Helvetica,Arial,sans-serif;
 }
 h2 {
 	font-size: 1.5em;
-	margin: .83em 0
+	margin: .83em 0;
+	font-family: 'Michroma','Ubuntu',Arial,Verdana,sans-serif;
 }
 h3 {
 	font-size: 1.17em;
@@ -269,9 +272,16 @@ a {
 }
 .header-banner {
 	width: 100%;
-	background-color: #3366cc;
+	background: rgba(138,49,43,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(138,49,43,1)), color-stop(100%, rgba(92,28,21,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a312b', endColorstr='#5c1c15', GradientType=1 );
 	margin: 0px;
-	border-top: 1px solid #339966;
+	border-top: 1px solid rgba(0,0,0,0.8);
 	position: relative;
 }
 .header-banner:after {
@@ -285,8 +295,8 @@ a {
 	pointer-events: none;
 }
 .header-banner:after {
-	border-color: rgba(51, 102, 204, 0);
-	border-top-color: #3366cc;
+	/*border-color: rgba(51, 102, 204, 0);*/
+	border-top-color: #6b231c;
 	border-width: 12px;
 	margin-left: -12px;
 }
@@ -336,9 +346,22 @@ a {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500px;
 	color: #FFF;
-	background: url(../img/right-bg.png) no-repeat;
-	padding: 0 0 4.4% 38px;
+	/*background: url(../img/right-bg.png) no-repeat;*/
+	padding: 0 0 4.4% 45px;
 	line-height: 25px;
+	position: relative;
+}
+.video-right ul li:before {
+	content:"\2713";
+	color: #89312B;
+	display: inline-block;
+	padding: 6px;
+	background-color: white;
+	border-radius: 50%;
+	line-height: 0.7;
+	font-weight: 900;
+	position: absolute;
+	left: 0;
 }
 .content-bg {
 	width: 100%;
@@ -357,7 +380,7 @@ a {
 	font-size: 27px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	color: #000;
+	color: #959595;
 	background: url(../img/should-text-bg.png) right no-repeat;
 	padding: 18px 50px 0 0;
 	height: 88px;
@@ -383,26 +406,41 @@ a {
 	display: inline-block;
 	padding: 18px 0 15px 0;
 	text-align: center;
-	border-bottom: 2px solid #ff9900;
+	border-bottom: 2px solid #BD831A;
 	border-radius: 6px;
 	text-transform: uppercase;
 	font-size: 28px;
-	color: #FFF;
+	color: rgba(5,5,0,0.4);/*#BD831A;*/
 	font-family: 'Roboto', sans-serif;
 	font-weight: 700;
 	background-color: #ffcc33;
 	text-decoration: none;
+	text-shadow: rgba(255,255,255,0.4) 0px 2px 2px;
 }
 .send-button a:hover {
-	background-color: #3366cc;
-	border-bottom: 2px solid #003399;
+	color: rgba(255,255,255,0.8);
+	background: rgba(138,49,43,1);
+	background: -moz-linear-gradient(top, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(138,49,43,1)), color-stop(100%, rgba(92,28,21,1)));
+	background: -webkit-linear-gradient(top, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: -o-linear-gradient(top, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: -ms-linear-gradient(top, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	background: linear-gradient(to bottom, rgba(138,49,43,1) 0%, rgba(92,28,21,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a312b', endColorstr='#5c1c15', GradientType=0 );
+	border-bottom: 2px solid rgba(0,0,0,0.4);
+	text-shadow: rgba(0,0,0,0.4) 0px 2px 2px;
+
+}
+.send-button a:hover span {
+	color: rgba(255,255,255,0.8);
+	text-shadow: rgba(0,0,0,0.4) 0px 2px 2px;
 }
 .send-button a span {
 	padding: 0;
 	text-transform: uppercase;
 	font-size: 40px;
 	line-height: 24px;
-	color: #FFF;
+	color: #BD831A;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	margin: 0 0 0 3px;

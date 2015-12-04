@@ -765,12 +765,12 @@ All this is done for any sub-level being entered.
 
 /* Demo 2 */
 .dl-menuwrapper button {
-	background: #C7D9FF;
+	background: rgba(0,0,0,0.5);
 }
 
 .dl-menuwrapper button:hover,
 .dl-menuwrapper button.dl-active,
 .dl-menuwrapper ul {
-	background: #447FF6;
+	background: rgba(0,0,0,0.8);
 }
 
