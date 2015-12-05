@@ -740,6 +740,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 .privacy-policy span {
 	font-weight: bold;
 }
+@media (max-width: 1020px){
+	#minishare {
+		display: none !important;
+	}
+}
 @media only screen and (max-width: 964px) {
 	.body-wrapper {
 		width: 100%;
@@ -907,7 +912,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 		font-size: 14px;
 	}
 }
- @media only screen and (max-width: 480px) {
+
+@media only screen and (max-width: 480px) {
 	.should-text {
 		font-size: 24px;
 	}
@@ -944,7 +950,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', end
 	font-size: 34px;
 }
 
- @media only screen and (max-width: 300px) {
+@media only screen and (max-width: 300px) {
 	.row input {
 		width: 85%;
 		padding: 5px 16px 6px;
