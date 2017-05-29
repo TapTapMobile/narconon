@@ -490,7 +490,6 @@
                             errors.push("Name is incorrect.");
                         }else{
                             var name_temp = name.val().trim();
-                            console.log(name_temp.length);
                             if(name_temp.length < 5){
                                 name.addClass("error");
                                 errors.push("Full name is required.");
@@ -541,30 +540,34 @@
                             set_message(errors[0]);
                         }
                     }else{
-                        var stamp = new Date();
+                        var stamp = (new Date()).toString();
                         var name = $("#contact_us_form input[name='name']");
                         var phone = $("#contact_us_form input[name='phone']");
                         var email = $("#contact_us_form input[name='email']");
                         var details = {
-                                'timestamp' : stamp,
-                                'name' : name.val(),
-                                'tel'  : phone.val(),
-                                'email': email.val(),
+                                'date'   : stamp,
+                                'name'   : name.val(),
+                                'phone'  : phone.val(),
+                                'email'  : email.val(),
                                 'origin' : 'LP3 - rehab.html'
                             }
+                        // url : "https://zapier.com/hooks/catch/32f0bd/" <-- Zapier link.
                         $.ajax({
-                            type : "post",
-                            url : "https://zapier.com/hooks/catch/32f0bd/",
+                            type : "get",
+                            url : "https://script.google.com/macros/s/AKfycbyQ1zwRf0hUZBBsHopeEKSNKvpN50kos0vdwQd8DW8qIUGMpko/exec",
                             data : details,
+                            error: function(response) {
+                                top.location = "thank_you.html";
+                            },
                             success : function(response) {
-                                if(response.status == "success") {
-                                    top.location = "thank_you.html";
-                                }
-                                else {
-                                    alert("Unknown error encountered.");
-                                }
+                                top.location = "thank_you.html";
                             }
                         })
+                        /*var url = 'https://script.google.com/macros/s/AKfycbyQ1zwRf0hUZBBsHopeEKSNKvpN50kos0vdwQd8DW8qIUGMpko/exec?'+$.param(details);
+                        $.getJSON(url,function(response) {
+                            console.log(response);
+                            top.location = "thank_you.html"
+                        });*/
                     }
                     $("#contact_us_form input").popover({trigger:'focus'});
                 },100);
