@@ -44,7 +44,7 @@ h6 {
 		$('#ss-form').submit(function(event) {
 			var fullDate = new Date()
 			var formData = {
-				"timestamp":fullDate,
+				"timestamp":fullDate.toString(),
 				"name": $('#name').val(), 
 				"school": $("#school").val(),
 				"tel": $("#tel").val(), 
